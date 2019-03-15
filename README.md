@@ -1,6 +1,8 @@
 # My personal website.
 
-**[mateja.lasan.ca](https://mateja-lasan-ca.herokuapp.com/)**
+**[mateja.lasan.ca](https://mateja.lasan.ca/)**
+
+[![Build Status](https://travis-ci.com/matootie/mateja.lasan.ca.svg?branch=master)](https://travis-ci.com/matootie/mateja.lasan.ca)
 
 ## Section 1: Introduction.
 
