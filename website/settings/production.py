@@ -46,6 +46,4 @@ CACHES = {
         'KEY_PREFIX': 'matejalasanca', }, }
 
 ALLOWED_HOSTS = [
-    'mateja.lasan.ca',
-    'www.mateja.lasan.ca',
     'mateja-lasan-ca.herokuapp.com', ]
