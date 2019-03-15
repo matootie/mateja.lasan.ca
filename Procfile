@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT website.wsgi.production:application
+web: waitress-serve website.wsgi.production:application

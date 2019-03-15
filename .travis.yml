@@ -13,6 +13,6 @@ deploy:
     secure: sTPHToszOKX0rtH7OpokO/tp1oMAtFwlXbt7Zm197k6UZRZbe8D888j5abjhZFe9sPVvD5FbE05mwvr1PBlNtbinzh7jCdC7QMFdZ4pvjG4tP4oDdv8jP3X7URNGPwVj8VrHeIRNsE8Jb6ZDEc2pgRQWXc3DBeXYM+28fJDuCduLEgCg6NRQiJsLwA8xbztortKsHSK5DsyeiunzMUpuWsC66m3cwL4bwnL1ZA81QZMDqEXEAe7DBKCg9gmMtA/+EfkF45BwoEVWR+GXXzeC/HC9f+ZdpTEAIR+sZFmbRji7e6HjUjsEX7Mm6RWpElLVG+3YDPcQsCE/CYc2QdDlTf4UX26DTNV1/neC1QWhif4FgHEWEHMbhLSpbD7r60bQ0AW4wqKc28XB1n0jpYge2vCpijHOzGNcA5P/vmShHI2ut7w4mPQW95e9WXZ5f8jVOS33hQ+4dSSw4Oz8Pdy9Eb2EK6rxxeoMlDiHMEggh0m6FcsB4DAGrHHVzItXKOML816vTPMMnoEG/mskHUDJ6o5kN71WH4vrW2ofLaxZXyasHCsBCdTdPW3itFJ7wgpcUL1hw0Na/sKkmNF/QvuzJDz3Yd5DZaPxhBXkM5DEQ5S2rrC0hZbSD4oDinbA+6mLgpraiyQQ48ScT3HmDuQ6xFr2VriGhjnBBhxcPLRpmcY=
   app: mateja-lasan-ca
   run:
-  - python production.py makemigrations
-  - python production.py migrate
-  - python production.py collectstatic --no-input
+  - python production.py makemigrations --verbosity 3
+  - python production.py migrate --verbosity 3
+  - python production.py collectstatic --no-input --verbosity 3
