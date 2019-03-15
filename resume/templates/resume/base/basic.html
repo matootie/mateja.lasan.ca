@@ -1,0 +1,20 @@
+{% load static %}
+{% load resume_tags %}
+
+<!doctype html>
+
+<html lang="en-CA">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,800" rel="stylesheet">
+        <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
+        {% block styles %}{% endblock styles %}
+        <title>{% site_title %}</title>
+        <link rel="icon" href="{% static 'img/icons/icon-pink.png' %}">
+    </head>
+    <body>
+        {% block body %}{% endblock body %}
+        {% block scripts %}{% endblock scripts %}
+    </body>
+</html>

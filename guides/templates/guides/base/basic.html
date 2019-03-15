@@ -1,0 +1,24 @@
+{% load static %}
+
+<html lang="en-CA">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="">
+        <!-- Stylesheets -->
+        <!--<link rel="stylesheet" href="">-->
+        {% block styles %}
+        {% endblock styles %}
+        <!-- Content -->
+        <link rel="icon" href="{% static 'img/icons/icon-blue.png' %}">
+        <title>Mateja Lasan | Guides</title>
+    </head>
+    <body>
+        {% block body %}
+        {% endblock body %}
+    </body>
+    {% block scripts %}
+    {% endblock scripts %}
+</html>

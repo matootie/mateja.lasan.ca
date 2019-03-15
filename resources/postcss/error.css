@@ -1,0 +1,13 @@
+#error-code {
+    opacity: 0;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 4em;
+    position: absolute;
+    width: 90vw;
+    left: 50vw;
+    margin-left: -45vw;
+    height: 50vh;
+    top: 50vh;
+    margin-top: -25vh;
+}

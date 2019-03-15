@@ -1,0 +1,38 @@
+{% extends 'guides/base/basic.html' %}
+
+{% load static %}
+{% load guides_tags %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'guides/css/guide-styles.min.css' %}">
+    {% if guide.content_md %}
+        <link rel="stylesheet" href="{% static 'guides/css/pygments.min.css' %}">
+        <link rel="stylesheet" href="{% static 'guides/css/md-styles.min.css' %}">
+    {% elif guide.content_html %}
+        <link rel="stylesheet" href="{% static 'guides/css/html-styles.min.css' %}">
+    {% endif %}
+{% endblock styles %}
+
+{% block body %}
+    <h1 id="guide-title">{{ guide.title }}</h1>
+    {% if guide.content_md %}
+        <div class="markdown-content">
+            {{ guide.content_md|parse_markdown }}
+        </div>
+    {% elif guide.content_html %}
+        <div class="note-wrapper">
+            {{ guide.content_html|parse_html }}
+        </div>
+    {% else %}
+        <p class="warning">This guide has no content.</p>
+    {% endif %}
+    <p id="guide-published-date"><small>{{ guide.published }}</small></p>
+{% endblock body %}
+
+{% block scripts %}
+    {% if guide.content_md %}
+        <script src="{% static 'guides/js/md-script.min.js' %}"></script>
+    {% elif guide.content_html %}
+        <script src="{% static 'guides/js/html-script.min.js' %}"></script>
+    {% endif %}
+{% endblock scripts %}

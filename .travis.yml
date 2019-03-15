@@ -1,0 +1,16 @@
+dist: xenial
+language: python
+python:
+- 3.6
+install:
+- pip install pipenv
+- pipenv install
+script:
+- pipenv run python development.py test
+deploy:
+  provider: heroku
+  app: mateja-lasan-ca
+  run:
+  - "python production.py makemigrations"
+  - "python production.py migrate"
+  - "python production.py collectstatic --no-input"

@@ -1,0 +1,18 @@
+{% load static %}
+
+<!doctype html>
+
+<html lang="en-CA">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mateja Lasan | Error</title>
+    <link rel="stylesheet" href="{% static 'css/error.min.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+</head>
+<body id="error-body">
+<h1 id="error-code">{% block error-code %}{% endblock error-code %}</h1>
+</body>
+<script src="{% static 'js/anime.min.js' %}"></script>
+<script src="{% static 'js/error.min.js' %}"></script>
+</html>

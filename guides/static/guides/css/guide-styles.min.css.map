@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../resources/postcss/guide-styles.css"],"names":[],"mappings":"AAAA,mCACI,gBAAiB,AACjB,kBAAmB,AACnB,gBAAiB,CACpB","file":"guide-styles.min.css","sourcesContent":["#guide-published-date, #guide-title {\n    max-width: 600px;\n    text-align: center;\n    margin: 3rem auto\n}\n"]}

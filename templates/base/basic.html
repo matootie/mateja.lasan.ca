@@ -1,0 +1,73 @@
+{% load static %}
+
+<!doctype html>
+
+<html lang="en-CA">
+    <head>
+        {% block head %}
+            {% block head_meta %}
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+            {% endblock head_meta %}
+            {% block head_styles %}
+                {# fonts #}
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,800" rel="stylesheet">
+                {# styles #}
+                <link rel="stylesheet" href="{% static 'css/base/basic.css' %}">
+            {% endblock head_styles %}
+            {% block head_content %}
+                <link rel="icon" href="">
+                <title></title>
+            {% endblock head_content %}
+            {% block head_seo %}
+
+            {% endblock head_seo %}
+        {% endblock head %}
+    </head>
+    <body>
+        {% block body %}
+            <header>
+                {% block body_header %}
+                    <div class="header content-wrapper">
+                        <div class="branding">
+                            <img class="brand-logo" src="{% static '' %}" alt="Mateja Lasan brand logo.">
+                            <h1 class="brand-title">Mateja Lasan</h1>
+                            <p class="brand-tagline">Web Developer</p>
+                        </div>
+                        <nav class="main-navigation">
+                            <ul>
+                                {# Replace with template tag that automatically generates list items based on urls #}
+                                <li><a href="#">Placeholder</a></li>
+                                <li><a href="#">Placeholder</a></li>
+                                <li><a href="#">Placeholder</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                {% endblock body_header %}
+            </header>
+            <main>
+                {% block body_main %}
+                    <div class="content-wrapper">
+                        <p>This page has no content.</p>
+                    </div>
+                {% endblock body_main %}
+            </main>
+            <footer>
+                {% block body_footer %}
+                    <div class="footer content-wrapper">
+                        <a id="return-to-home" href="{% url 'home' %}"><small>Return to Home.</small></a>
+                        <div class="social-links">
+                            <a href="https://github.com/matootie/" target="_blank"><img class="footer-icon" src="{% static 'img/icons/github.png' %}" alt="GitHub"></a>
+                            <a href="https://twitter.com/matootietweets/" target="_blank"><img class="footer-icon" src="{% static 'img/icons/twitter.png' %}" alt="Twitter"></a>
+                            <a href="https://instagram.com/mateja.lasan/" target="_blank"><img class="footer-icon" src="{% static 'img/icons/instagram.png' %}" alt="Instagram"></a>
+                        </div>
+                        <p class="copyright"><small>Copyright &copy;2018-{% now '%Y' %}. Mateja Lasan</small></p>
+                    </div>
+                {% endblock body_footer %}
+            </footer>
+            {% block body_scripts %}
+                <script src="{% static 'js/jquery.min.js' %}"></script>
+            {% endblock body_scripts %}
+        {% endblock body %}
+    </body>
+</html>

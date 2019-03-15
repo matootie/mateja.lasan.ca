@@ -1,0 +1,211 @@
+{% extends 'guides/base/basic.html' %}
+
+{% load static %}
+
+{% block styles %}
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            background-color: rgb(40,40,40);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            padding: 1rem;
+            margin: auto;
+            max-width: 768px;
+        }
+
+        header .content-wrapper h1 {
+            font-size: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        header .content-wrapper p {
+            font-size: 1.25rem;
+        }
+
+        header .content-wrapper p:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+
+        header .content-wrapper p:last-child {
+            color: rgb(40,110,80);
+        }
+
+        main {
+            background-color: #FFF;
+        }
+        
+        .grid-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 1rem;
+            grid-row-gap: 1rem;
+            
+            margin: auto;
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .grid-wrapper a.grid-item {
+            text-decoration: none;
+        }
+
+        .grid-wrapper a.grid-item::after {
+            position: relative;
+            z-index: 1000;
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            border-bottom: 2px solid rgba(0,0,0,0.2);
+            opacity: 0;
+
+            transition: opacity ease-in-out 0.3s;
+        }
+
+        .grid-wrapper a.grid-item:hover::after {
+            opacity: 1;
+        }
+
+        .grid-wrapper a.grid-item:hover div {
+            transform: translateY(-5px);
+        }
+
+        .grid-wrapper a.grid-item:hover div h1 {
+            transform: translateY(-5px);
+        }
+
+        .grid-wrapper .grid-item div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 12rem;
+
+            color: rgba(0,0,0,0.75);
+            background-position: center;
+            background-size: cover;
+            border-radius: 0.5rem 0.5rem 0 0;
+
+            transition: transform ease-in-out 0.1s;
+        }
+
+        .grid-wrapper .grid-item div h1 {
+            transition: transform ease-in-out 0.15s;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        footer {
+            background-color: rgb(40,40,40);
+        }
+
+        footer .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer .content-wrapper #social-links {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer .content-wrapper #social-links a:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        footer .content-wrapper #social-links a .footer-icon {
+            opacity: 0.8;
+            width: 2rem;
+            height: 2rem;
+        }
+
+        footer .content-wrapper #back-to-top {
+            text-decoration: none;
+
+            transition: color ease-in-out 0.1s;
+        }
+
+        footer .content-wrapper #back-to-top:hover {
+            color: rgba(230,62,123,0.75);
+        }
+
+        footer .content-wrapper #back-to-top,
+        footer .content-wrapper #copyright {
+            margin: 1rem 0;
+            color: rgb(240,240,240);
+        }
+
+        @media (max-width: 768px) {
+            .grid-wrapper {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .grid-wrapper {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .grid-wrapper .grid-item div {
+                min-height: 6rem;
+            }
+        }
+        
+    </style>
+
+{% endblock styles %}
+
+{% block body %}
+    <header>
+        <div class="content-wrapper">
+            <h1>Mateja's Guides</h1>
+            <p>Welcome to my collection of guides. As a self motivated learner, I come across a number of problems, especially when it comes to computer software. After researching across the internet in search for answers, I begin to understand the problem and various approaches towards a solution. After becoming more comfortable with the situation, I like to write a guide on how I would go about solving it.</p>
+            <p>There are three main reasons I choose to do this. One, I like to keep a future reference for myself in case I need to remind myself of a step that's missing from my memory. Two, It's easier to commit things to memory when you write them down, especially when you write it in a format that's welcoming to new readers. And finally, I hope that these guides can serve as a helping hand to others who might find themselves in a similar situation as me, and I hope they can take at least a fraction of what I write and use it to help themselves solve their own problems.</p>
+            <p>Below you'll find a collection of tags. Choose one to see more specific guides.</p>
+        </div>
+    </header>
+    <main>
+        <div class="content-wrapper">
+            <div class="grid-wrapper">
+                {% for tag in tags %}
+                <a class="grid-item" href="{% url 'guides:guides' tag.value %}"><div style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(255,255,255,1)), url('{{ tag.image.url }}');">
+                        <h1>{{ tag.value }}</h1>
+                    </div></a>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="content-wrapper">
+            <a id="back-to-top" href="#"><small>Return to home</small></a>
+            <div id="social-links">
+                <a href="https://github.com/matootie/" target="_blank"><img class="footer-icon" src="{% static 'resume/img/icons/github-light-150.png' %}" alt="GitHub"></a>
+                <a href="https://twitter.com/matootietweets/" target="_blank"><img class="footer-icon" src="{% static 'resume/img/icons/twitter-light-150.png' %}" alt="Twitter"></a>
+                <a href="https://instagram.com/mateja.lasan/" target="_blank"><img class="footer-icon" src="{% static 'resume/img/icons/instagram-light-150.png' %}" alt="Instagram"></a>
+            </div>
+            <p id="copyright"><small>&copy;2018-2019 Mateja Lasan</small></p>
+        </div>
+    </footer>
+{% endblock body %}
+{% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'resume/js/parallax.min.js' %}"></script>
+{% endblock scripts %}
