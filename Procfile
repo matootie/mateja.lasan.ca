@@ -1,1 +1,1 @@
-web: waitress-serve website.wsgi.production:application
+web: gunicorn website.wsgi.production --log-file -

@@ -16,7 +16,7 @@ django-htmlmin = "*"
 pygments = "*"
 django-redis = "*"
 dj-database-url = "*"
-waitress = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"
