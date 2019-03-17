@@ -7,6 +7,7 @@ class Tag(models.Model):
     """
 
     value = models.CharField(max_length=20, unique=True)
+    description = models.TextField(blank=True, null=True)
     parent_tag = models.ForeignKey(
         'Tag', on_delete=models.CASCADE, null=True, blank=True)
     image = models.ImageField(upload_to='guides/tags/')

@@ -16,9 +16,11 @@ class TagTest(TestCase):
         """
 
         cls.instance_one = Tag.objects.create(
-            value="Server Administration")
+            value="Server Administration",
+            description="A collection of guides related to maintaining Linux servers.")
         cls.instance_two = Tag.objects.create(
             value="Web Development",
+            description="A collection of guides related to developing websites and web applications.",
             parent_tag=cls.instance_one)
 
     def test_string_format(self):
