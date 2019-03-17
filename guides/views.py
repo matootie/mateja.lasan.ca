@@ -10,7 +10,8 @@ def main_view(request):
     The main view, displaying all tags.
     """
 
-    tags = Tag.objects.all()
+    # Get all top level tags.
+    tags = Tag.objects.all().filter(parent_tag=None)
 
     return render(
         request,
@@ -52,4 +53,3 @@ def guide_view(request, tag_value, guide_id):
         "guides/guide_view.html",
         {
             "guide": guide, })
-

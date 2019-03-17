@@ -9,6 +9,7 @@ class TagAdmin(admin.ModelAdmin):
     fields = (
         'value',
         'parent_tag',
+        'description',
         'image', )
     list_display = (
         'value',

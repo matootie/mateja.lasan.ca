@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../resources/postcss/main.css"],"names":[],"mappings":"AAAA,KACE,YAAa,AACb,gBAAiB,AACjB,iBAAmB,CACpB,AAMD,iBACE,iBAAmB,CACpB","file":"main.min.css","sourcesContent":["body {\n  margin: auto;\n  max-width: 600px;\n  font-family: serif;\n}\n\nheader h1 {\n  text-align: center;\n}\n\nfooter {\n  text-align: center;\n}\n"]}
