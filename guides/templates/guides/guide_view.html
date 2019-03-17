@@ -4,9 +4,14 @@
 {% load guides_tags %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'guides/css/guide-styles.min.css' %}">
-    {% if guide.content_md %}
+    {% if darkmode %}
+        <link rel="stylesheet" href="{% static 'guides/css/guide-styles-darkmode.min.css' %}">
+        <link rel="stylesheet" href="{% static 'guides/css/pygments-dark.min.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'guides/css/guide-styles.min.css' %}">
         <link rel="stylesheet" href="{% static 'guides/css/pygments.min.css' %}">
+    {% endif %}
+    {% if guide.content_md %}
         <link rel="stylesheet" href="{% static 'guides/css/md-styles.min.css' %}">
     {% elif guide.content_html %}
         <link rel="stylesheet" href="{% static 'guides/css/html-styles.min.css' %}">

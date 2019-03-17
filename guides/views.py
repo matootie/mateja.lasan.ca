@@ -48,8 +48,14 @@ def guide_view(request, tag_value, guide_id):
     if not guide:
         raise Http404
 
+    darkmode = None
+    if request.method == "GET":
+        if "dark" in request.GET:
+            darkmode = True
+
     return render(
         request,
         "guides/guide_view.html",
         {
+            "darkmode": darkmode,
             "guide": guide, })

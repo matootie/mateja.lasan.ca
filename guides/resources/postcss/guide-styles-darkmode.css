@@ -1,0 +1,16 @@
+html {
+  background-color: #1e1e1e;
+}
+
+body {
+  color: #e6e6e6;
+}
+
+#guide-published-date,
+#guide-title {
+  margin: auto;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
