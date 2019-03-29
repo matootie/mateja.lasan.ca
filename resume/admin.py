@@ -28,10 +28,12 @@ class ComputerSkillAdmin(admin.ModelAdmin):
     fields = (
         "name",
         "proficiency",
-        "parent_skill", )
+        "parent_skill",
+        "colour", )
     list_display = (
         "proficiency",
-        "name",)
+        "parent_skill",
+        "name", )
 
 
 @admin.register(Location)

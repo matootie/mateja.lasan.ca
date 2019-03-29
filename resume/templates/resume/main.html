@@ -29,23 +29,9 @@
         <div id="computer-skills" class="resume-section">
             <div class="content-wrapper">
                 {% for computer_skill in computer_skills %}
-                    <div class="computer-skill animation-element fade-up">
-                        <div class="text-container">
-                            <p>{{ computer_skill.name }}</p>
-                        </div>
-                        <div class="proficiency-container">
-                            <div class="proficiency" style="width: {{ computer_skill.proficiency }}%;">
-                                <div class="proficiency-colours animation-element fill-up"></div>
-                            </div>
-                        </div>
-                    </div>
-                    {% if computer_skill.subskills %}
-                        {% for subskill in computer_skill.subskills.all %}
-                            {% with depth=1 computer_skill=subskill template_name="resume/base/subskill.html" %}
-                                {% include template_name %}
-                            {% endwith %}
-                        {% endfor %}
-                    {% endif %}
+                    {% with depth=0 computer_skill=computer_skill template_name="resume/base/subskill.html" %}
+                        {% include template_name %}
+                    {% endwith %}
                 {% endfor %}
             </div>
         </div>

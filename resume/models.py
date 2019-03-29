@@ -51,6 +51,11 @@ class ComputerSkill(models.Model):
         null=True,
         blank=True)
     proficiency = models.IntegerField()
+    colour = models.CharField(max_length=17, blank=True, null=True)
+
+    @property
+    def get_colour(self):
+        return self.colour if self.colour else "rgba(230,62,123,0.75)"
 
     def __str__(self):
         """
