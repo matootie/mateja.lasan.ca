@@ -1,0 +1,20 @@
+<div class="computer-skill animation-element fade-up" style="margin-left:{% widthratio depth 1 2 %}rem">
+    <div class="text-container">
+        <p>{{ computer_skill.name }}</p>
+    </div>
+    <div class="proficiency-container">
+        <div class="proficiency" style="width: {{ computer_skill.proficiency }}%;">
+            <div class="proficiency-colours animation-element fill-up"></div>
+        </div>
+    </div>
+</div>
+
+{% if computer_skill.subskills %}
+    {% for subskill in computer_skill.subskills.all %}
+        {% with new_depth=depth|add:1 %}
+            {% with depth=new_depth computer_skill=subskill template_name="resume/base/subskill.html" %}
+                {% include template_name %}
+            {% endwith %}
+        {% endwith %}
+    {% endfor %}
+{% endif %}

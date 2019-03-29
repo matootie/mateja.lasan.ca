@@ -27,7 +27,8 @@ class SkillAdmin(admin.ModelAdmin):
 class ComputerSkillAdmin(admin.ModelAdmin):
     fields = (
         "name",
-        "proficiency",)
+        "proficiency",
+        "parent_skill", )
     list_display = (
         "proficiency",
         "name",)
@@ -88,4 +89,3 @@ class CoverLetterAdmin(admin.ModelAdmin):
         "text", )
     list_display = (
         "created", )
-

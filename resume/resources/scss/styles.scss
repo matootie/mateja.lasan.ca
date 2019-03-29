@@ -79,6 +79,9 @@ header .content-wrapper p small {
 }
 
 #computer-skills {
+    margin: auto;
+    max-width: 500px;
+    width: 100%;
     padding: 3rem 0;
     font-family: 'Hack', monospace;
 }
@@ -112,7 +115,7 @@ main .animation-element.fill-up.in-view {
 }
 
 #computer-skills .computer-skill .text-container {
-    width: 60%;
+    width: 100%;
     text-align: left;
     margin: 1rem 0 0.25rem;
 }
@@ -125,10 +128,10 @@ main .animation-element.fill-up.in-view {
 }
 
 #computer-skills .computer-skill .proficiency-container {
-    width: 60%;
+    width: 90%;
     border-radius: 1rem;
-    border-left: 2px solid rgb(230,230,230,0.75);
-    border-right: 2px solid rgb(230,230,230,0.75);
+    border-left: 2px solid rgba(230,230,230,0.75);
+    border-right: 2px solid rgba(230,230,230,0.75);
 }
 
 #computer-skills .computer-skill .proficiency-container .proficiency .proficiency-colours {
@@ -152,7 +155,7 @@ main .animation-element.fill-up.in-view {
 }
 
 #skills .text-container p {
-    width: 80%;
+    width: 100%;
     color: rgb(200,200,200);
     font-style: italic;
 }
