@@ -4,6 +4,13 @@
 
 {% block styles %}
     <link rel="stylesheet" href="{% static 'resume/css/styles.min.css' %}">
+    <style>
+
+        #computer-skills .sub-computer-skill {
+            margin-left: 3rem;
+        }
+
+    </style>
 {% endblock styles %}
 
 {% block body %}
@@ -22,16 +29,9 @@
         <div id="computer-skills" class="resume-section">
             <div class="content-wrapper">
                 {% for computer_skill in computer_skills %}
-                    <div class="computer-skill animation-element fade-up">
-                        <div class="text-container">
-                            <p>{{ computer_skill.name }}</p>
-                        </div>
-                        <div class="proficiency-container">
-                            <div class="proficiency" style="width: {{ computer_skill.proficiency }}%;">
-                                <div class="proficiency-colours animation-element fill-up"></div>
-                            </div>
-                        </div>
-                    </div>
+                    {% with depth=0 computer_skill=computer_skill template_name="resume/base/subskill.html" %}
+                        {% include template_name %}
+                    {% endwith %}
                 {% endfor %}
             </div>
         </div>
@@ -54,9 +54,9 @@
                             <p class="animation-element fade-in-faster">{{ work.location }}</p>
                         {% endif %}
                         {% if work.end_date %}
-                            <p class="animation-element fade-in-faster">{{ work.start_date }} - {{ work.end_date }}</p>
+                            <p class="animation-element fade-in-faster">{{ work.start_date|date:"F Y" }} - {{ work.end_date|date:"F Y" }}</p>
                         {% else %}
-                            <p class="animation-element fade-in-faster">{{ work.start_date }} - Present</p>
+                            <p class="animation-element fade-in-faster">{{ work.start_date|date:"F Y" }} - Present</p>
                         {% endif %}
                     </div>
                 {% endfor %}
@@ -68,9 +68,9 @@
                             <p class="animation-element fade-in-faster">{{ education.location }}</p>
                         {% endif %}
                         {% if education.end_date %}
-                            <p class="animation-element fade-in-faster">{{ education.start_date }} - {{ education.end_date }}</p>
+                            <p class="animation-element fade-in-faster">{{ education.start_date|date:"F Y" }} - {{ education.end_date|date:"F Y" }}</p>
                         {% else %}
-                            <p class="animation-element fade-in-faster">{{ education.start_date }} - Present</p>
+                            <p class="animation-element fade-in-faster">{{ education.start_date|date:"F Y" }} - Present</p>
                         {% endif %}
                     </div>
                 {% endfor %}
@@ -81,9 +81,9 @@
                             <p class="animation-element fade-in-faster">{{ volunteer.location }}</p>
                         {% endif %}
                         {% if volunteer.end_date %}
-                            <p class="animation-element fade-in-faster">{{ volunteer.start_date }} - {{ volunteer.end_date }}</p>
+                            <p class="animation-element fade-in-faster">{{ volunteer.start_date|date:"F Y" }} - {{ volunteer.end_date|date:"F Y" }}</p>
                         {% else %}
-                            <p class="animation-element fade-in-faster">{{ volunteer.start_date }} - Present</p>
+                            <p class="animation-element fade-in-faster">{{ volunteer.start_date|date:"F Y" }} - Present</p>
                         {% endif %}
                     </div>
                 {% endfor %}
@@ -98,7 +98,7 @@
                 <a href="https://twitter.com/matootietweets/" target="_blank"><img class="footer-icon" src="{% static 'resume/img/icons/twitter-light-150.png' %}" alt="Twitter"></a>
                 <a href="https://instagram.com/mateja.lasan/" target="_blank"><img class="footer-icon" src="{% static 'resume/img/icons/instagram-light-150.png' %}" alt="Instagram"></a>
             </div>
-            <p id="copyright"><small>&copy; 2018 Mateja Lasan</small></p>
+            <p id="copyright"><small>&copy; 2018-{% now "Y" %} Mateja Lasan</small></p>
         </div>
     </footer>
 {% endblock body %}

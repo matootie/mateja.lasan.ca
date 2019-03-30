@@ -16,11 +16,13 @@ class ComputerSkillTest(TestCase):
 
         cls.instance_one = ComputerSkill.objects.create(
             name="Python",
-            proficiency=50)
+            proficiency=50,
+            colour="rgb(220,200,0)")
 
         cls.instance_two = ComputerSkill.objects.create(
-            name="HTML5",
-            proficiency=62)
+            name="Django",
+            proficiency=62,
+            parent_skill=cls.instance_one)
 
     def test_created_correctly(self):
         """
@@ -46,7 +48,7 @@ class ComputerSkillTest(TestCase):
 
         self.assertEqual(
             str(self.instance_two),
-            "HTML5")
+            "Django")
 
     def test_verbose_name(self):
         """
@@ -65,3 +67,34 @@ class ComputerSkillTest(TestCase):
         self.assertEqual(
             str(ComputerSkill._meta.verbose_name_plural),
             "Computer Skills")
+
+    def test_subskill_lookup(self):
+        """
+        Test to ensure lookup of sub skills works correctly.
+        """
+
+        self.assertEqual(
+            self.instance_one,
+            self.instance_two.parent_skill)
+
+    def test_subskill_reverse_lookup(self):
+        """
+        Test to ensure reverse lookup of sub skills works correctly.
+        """
+
+        self.assertIn(
+            self.instance_two,
+            self.instance_one.subskills.all())
+
+    def test_colours(self):
+        """
+        Test to ensure the colours are going to display correctly.
+        """
+
+        self.assertEqual(
+            self.instance_one.get_colour,
+            "rgb(220,200,0)")
+
+        self.assertEqual(
+            self.instance_two.get_colour,
+            "rgba(230,62,123,0.75)")
