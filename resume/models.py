@@ -44,7 +44,18 @@ class ComputerSkill(models.Model):
     """
 
     name = models.CharField(max_length=140)
+    parent_skill = models.ForeignKey(
+        "ComputerSkill",
+        on_delete=models.SET_NULL,
+        related_name="subskills",
+        null=True,
+        blank=True)
     proficiency = models.IntegerField()
+    colour = models.CharField(max_length=17, blank=True, null=True)
+
+    @property
+    def get_colour(self):
+        return self.colour if self.colour else "rgba(230,62,123,0.75)"
 
     def __str__(self):
         """
@@ -225,7 +236,7 @@ class CoverLetter(models.Model):
 
         :return: The first 10 characters of the cover letter object's text.
         """
-        
+
         return f"{self.text[:10]}..."
 
 
