@@ -27,10 +27,13 @@ class SkillAdmin(admin.ModelAdmin):
 class ComputerSkillAdmin(admin.ModelAdmin):
     fields = (
         "name",
-        "proficiency",)
+        "proficiency",
+        "parent_skill",
+        "colour", )
     list_display = (
         "proficiency",
-        "name",)
+        "parent_skill",
+        "name", )
 
 
 @admin.register(Location)
@@ -88,4 +91,3 @@ class CoverLetterAdmin(admin.ModelAdmin):
         "text", )
     list_display = (
         "created", )
-

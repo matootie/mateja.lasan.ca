@@ -21,7 +21,7 @@ class Main(View):
         """
 
         skills = Skill.objects.all()
-        computer = ComputerSkill.objects.all()
+        computer = ComputerSkill.objects.filter(parent_skill=None)
         education = EducationExperience.objects.all()
         work = WorkExperience.objects.all()
         volunteer = VolunteerExperience.objects.all()
