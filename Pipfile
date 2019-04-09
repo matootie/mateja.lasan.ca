@@ -17,7 +17,6 @@ pygments = "*"
 django-redis = "*"
 dj-database-url = "*"
 gunicorn = "*"
-waitress = "*"
 
 [requires]
 python_version = "3.6"
