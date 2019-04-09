@@ -1,7 +1,8 @@
 body {
-  margin: auto;
-  max-width: 600px;
-  font-family: serif;
+    margin: auto;
+    max-width: 600px;
+    font-family: serif;
+    color: rgb(230,230,230);
 }
 
 header h1 {
@@ -10,4 +11,26 @@ header h1 {
 
 footer {
   text-align: center;
+  margin-top: 3rem;
+}
+
+html {
+    background-color: rgb(30,30,30);
+}
+
+header .content-wrapper h1 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+header {
+    margin-bottom: 3rem;
+}
+
+a {
+    color: mediumorchid;
+}
+
+a:visited {
+    color: mediumpurple;
 }

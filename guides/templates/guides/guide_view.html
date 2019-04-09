@@ -4,12 +4,12 @@
 {% load guides_tags %}
 
 {% block styles %}
-    {% if darkmode %}
-        <link rel="stylesheet" href="{% static 'guides/css/guide-styles-darkmode.min.css' %}">
-        <link rel="stylesheet" href="{% static 'guides/css/pygments-dark.min.css' %}">
-    {% else %}
+    {% if lightmode %}
         <link rel="stylesheet" href="{% static 'guides/css/guide-styles.min.css' %}">
         <link rel="stylesheet" href="{% static 'guides/css/pygments.min.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'guides/css/guide-styles-darkmode.min.css' %}">
+        <link rel="stylesheet" href="{% static 'guides/css/pygments-dark.min.css' %}">
     {% endif %}
     {% if guide.content_md %}
         <link rel="stylesheet" href="{% static 'guides/css/md-styles.min.css' %}">
