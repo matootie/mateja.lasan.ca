@@ -13,9 +13,9 @@ from guides import urls as guides_urls
 # Production URLs.
 urlpatterns = [
     path("resume/", include(resume_urls, namespace="resume")),
+    path("guides/", include(guides_urls, namespace="guides")),
     path('admin/', admin.site.urls), ]
 
 # Development only URLs.
 if settings.DEBUG:
-    urlpatterns += [
-        path("guides/", include(guides_urls, namespace="guides")), ]
+    urlpatterns += []
