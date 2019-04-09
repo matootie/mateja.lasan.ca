@@ -6,21 +6,27 @@ class Tag(models.Model):
     Model representing a Guide tag.
     """
 
-    value = models.CharField(max_length=20, unique=True)
+    value = models.CharField(max_length=20)
     description = models.TextField(blank=True, null=True)
     parent_tag = models.ForeignKey(
         'Tag', on_delete=models.CASCADE, null=True, blank=True)
-    image = models.ImageField(upload_to='guides/tags/')
 
     def __str__(self):
         """
         String format of the Tag model.
         """
 
-        if self.parent_tag:
-            return f'{self.parent_tag.value}/{self.value}'
+        ancestry = [str(self.value)]
 
-        return f'{self.value}'
+        def get_ancestry(tag):
+            if tag.parent_tag:
+                ancestry.append(str(tag.parent_tag.value))
+                get_ancestry(tag.parent_tag)
+            return
+
+        get_ancestry(self)
+
+        return "/".join(ancestry[::-1])
 
     class Meta:
         """

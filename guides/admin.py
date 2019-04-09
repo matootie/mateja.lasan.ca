@@ -9,8 +9,7 @@ class TagAdmin(admin.ModelAdmin):
     fields = (
         'value',
         'parent_tag',
-        'description',
-        'image', )
+        'description', )
     list_display = (
         'value',
         'parent_tag', )
@@ -26,4 +25,3 @@ class GuideAdmin(admin.ModelAdmin):
     list_display = (
         'published',
         'title', )
-

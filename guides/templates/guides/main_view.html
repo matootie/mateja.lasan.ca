@@ -26,15 +26,17 @@
                                 {{ tag.value }}
                             </a>
                         </li>
-                        <ul>
-                            {% for sub_tag in tag.tag_set.all %}
-                                <li>
-                                    <a href="{% url 'guides:guides' sub_tag.value %}">
-                                        {{ sub_tag.value }}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
+                        {% with tagset=tag.tag_set.all %}
+                            {% if tagset %}
+                                <ul>
+                                    {% for sub_tag in tagset %}
+                                        {% with tag=sub_tag template_name="guides/base/subtag.html" %}
+                                            {% include template_name %}
+                                        {% endwith %}
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endwith %}
                 {% endfor %}
             </ul>
         </div>
