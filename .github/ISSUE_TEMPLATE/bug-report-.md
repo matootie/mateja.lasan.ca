@@ -8,7 +8,7 @@ assignees: matootie
 ---
 
 **Describe the bug.**
-A clear and concise description of what the bug is.
+An easy to understand and concise description of what the bug is.
 
 **To Reproduce.**
 Steps to reproduce the behaviour:
@@ -18,7 +18,7 @@ Steps to reproduce the behaviour:
 4. See error.
 
 **Expected behaviour.**
-A clear and concise description of what you expected to happen.
+Am easy to understand and concise description of what you expected to happen.
 
 **Screenshots.**
 If applicable, add screenshots to help explain your problem.
