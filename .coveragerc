@@ -19,7 +19,9 @@ exclude_lines=
     if __name__ == .__main__.:
 
 omit=
-    project/settings/*
-    project/*/migrations/*
+    website/settings/*
+    website/wsgi/*
+    **/*/migrations/*
+    **/*/tests/*
 
 show_missing=True
