@@ -9,7 +9,8 @@ script:
 - pipenv run python development.py test
 after_script:
 - pipenv install codecov --skip-lock
-- pipenv run codecov run development.py test --token=$CODECOV_TOKEN
+- pipenv run coverage run development.py test
+- pipenv run codecov --token=$CODECOV_TOKEN
 deploy:
   provider: heroku
   api_key:
