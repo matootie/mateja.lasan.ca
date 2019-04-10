@@ -4,12 +4,10 @@ python:
 - 3.6
 install:
 - pip install pipenv
-- pipenv install
+- pipenv install codecov
 script:
-- pipenv run python development.py test
-after_script:
-- pipenv install codecov --skip-lock
 - pipenv run coverage run development.py test
+after_script:
 - pipenv run codecov --token=$CODECOV_TOKEN
 deploy:
   provider: heroku
