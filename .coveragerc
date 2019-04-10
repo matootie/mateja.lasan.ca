@@ -7,6 +7,9 @@ exclude_lines=
 omit=
     website/settings/*
     website/wsgi/*
+    website/storage.py
     **/*/migrations/*
     **/*/tests/*
+    development.py
+    production.py
 show_missing=True
