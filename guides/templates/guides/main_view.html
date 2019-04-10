@@ -22,7 +22,7 @@
             <ul>
                 {% for tag in tags %}
                         <li>
-                            <a href="{% url 'guides:guides' tag.value %}">
+                            <a href="{% url 'guides:guides' tag.id %}">
                                 {{ tag.value }}
                             </a>
                         </li>

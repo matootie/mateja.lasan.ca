@@ -27,7 +27,7 @@
         {% else %}
             <ul>
                 {% for guide in guides %}
-                    <li><a href="{% url 'guides:guide' tag.value guide.id %}">{{ guide.title }}</a></li>
+                    <li><a href="{% url 'guides:guide' tag.id guide.id %}">{{ guide.title }}</a></li>
                 {% endfor %}
             </ul>
         {% endif %}
