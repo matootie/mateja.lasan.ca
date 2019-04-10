@@ -3,7 +3,7 @@
 **[mateja.lasan.ca](https://mateja.lasan.ca/)**
 
 [![Build Status](https://travis-ci.com/matootie/mateja.lasan.ca.svg?branch=master)](https://travis-ci.com/matootie/mateja.lasan.ca)
-[![Codecov](https://codecov.io/gh/TechnionYP5777/project-name/branch/master/graph/badge.svg)](https://codecov.io/gh/TechnionYP5777/project-name)
+[![Codecov](https://codecov.io/gh/matootie/mateja.lasan.ca/branch/master/graph/badge.svg)](https://codecov.io/gh/matootie/mateja.lasan.ca)
 
 ## Section 1: Introduction.
 
