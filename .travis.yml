@@ -8,8 +8,8 @@ install:
 script:
 - pipenv run python development.py test
 after_script:
-- pipenv install codecov
-- pipenv run codecov ./development.py test --token=$CODECOV_TOKEN
+- pipenv install codecov --skip-lock
+- pipenv run codecov run ./development.py test --token=$CODECOV_TOKEN
 deploy:
   provider: heroku
   api_key:
