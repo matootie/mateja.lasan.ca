@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.http import Http404
 
 from guides.models import Tag
@@ -20,12 +20,12 @@ def main_view(request):
             "tags": tags, })
 
 
-def tag_view(request, tag_value):
+def tag_view(request, tag_id):
     """
     The tag detail view, displaying all guides related to the tag.
     """
 
-    tag = get_object_or_404(Tag, value=tag_value)
+    tag = get_object_or_404(Tag, id=tag_id)
 
     guide_list = tag.guides.all()
 
@@ -36,12 +36,12 @@ def tag_view(request, tag_value):
             "tag": tag,
             "guides": guide_list, })
 
-def guide_view(request, tag_value, guide_id):
+def guide_view(request, tag_id, guide_id):
     """
     The guide view, displaying the actual guide.
     """
 
-    guides = get_object_or_404(Tag, value=tag_value).guides.all()
+    guides = get_object_or_404(Tag, id=tag_id).guides.all()
 
     guide = guides.get(id=guide_id)
 
