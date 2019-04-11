@@ -1,5 +1,6 @@
 from django.test import TestCase, TransactionTestCase, Client
 from django.utils import timezone
+from django.http import Http404
 
 from guides import views
 from guides import models
@@ -79,6 +80,10 @@ class GuidesMainViewTests(TransactionTestCase):
             self.tag_two.id,
             self.guide_two.id))
 
+        response_three = self.client.get("/guides/{}/{}/".format(
+            self.tag_two.id,
+            23))
+
         self.assertEqual(
             response_one.status_code,
             200)
@@ -86,6 +91,10 @@ class GuidesMainViewTests(TransactionTestCase):
         self.assertEqual(
             response_two.status_code,
             200)
+
+        self.assertEqual(
+            response_three.status_code,
+            404)
 
     def test_main_context(self):
         """

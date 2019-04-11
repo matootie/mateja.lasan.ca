@@ -43,9 +43,9 @@ def guide_view(request, tag_id, guide_id):
 
     guides = get_object_or_404(Tag, id=tag_id).guides.all()
 
-    guide = guides.get(id=guide_id)
-
-    if not guide:
+    try:
+        guide = guides.get(id=guide_id)
+    except Guide.DoesNotExist:
         raise Http404
 
     lightmode = None
