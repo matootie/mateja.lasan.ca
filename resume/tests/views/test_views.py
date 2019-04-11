@@ -5,7 +5,7 @@ from resume import views
 from resume import models
 
 
-class MainViewTests(TransactionTestCase):
+class ResumeMainViewTests(TransactionTestCase):
     """
     A collection of test cases for the Resume app main view.
     """
@@ -13,7 +13,7 @@ class MainViewTests(TransactionTestCase):
     @classmethod
     def setUpTestData(cls):
         """
-
+        Initialize some testing data for the main view.
         """
 
         cls.client = Client()
@@ -91,7 +91,7 @@ class MainViewTests(TransactionTestCase):
 
     def test_url(self):
         """
-
+        Test the main view url.
         """
 
         response = self.client.get("/resume/")
@@ -102,7 +102,7 @@ class MainViewTests(TransactionTestCase):
 
     def test_skill_context(self):
         """
-
+        Test that the main view contains the correct context for Skill objects.
         """
 
         response = self.client.get("/resume/")
@@ -113,7 +113,7 @@ class MainViewTests(TransactionTestCase):
 
     def test_computer_skill_context(self):
         """
-
+        Test that the main view contains the correct context for ComputerSkill objects.
         """
 
         response = self.client.get("/resume/")
@@ -125,6 +125,7 @@ class MainViewTests(TransactionTestCase):
     def test_education_experience_context(self):
         """
 
+        Test that the main view contains the correct context for EducationExperience objects.
         """
 
         response = self.client.get("/resume/")
@@ -136,6 +137,7 @@ class MainViewTests(TransactionTestCase):
     def test_work_experience_context(self):
         """
 
+        Test that the main view contains the correct context for WorkExperience objects.
         """
 
         response = self.client.get("/resume/")
@@ -147,6 +149,7 @@ class MainViewTests(TransactionTestCase):
     def test_volunteer_experience_context(self):
         """
 
+        Test that the main view contains the correct context for VolunteerExperience objects.
         """
 
         response = self.client.get("/resume/")
@@ -157,7 +160,7 @@ class MainViewTests(TransactionTestCase):
 
     def test_coverletter_context(self):
         """
-
+        Test that the main view contains the correct context for CoverLetter objects.
         """
 
         response = self.client.get("/resume/")
