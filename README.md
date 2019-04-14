@@ -9,8 +9,8 @@ If you are interested, [here you can find a roadmap of my plans with the website
 
 ## Table of Contents.
 
-* [Section 1. Introduction](#section-1)
-* [Section 2. Sections](#section-2)
+* [Section 1. Introduction](#section-1-introduction)
+* [Section 2. Sections](#section-2-sections)
     * [Resume](#resume)
     * [Guides](#guides)
 
