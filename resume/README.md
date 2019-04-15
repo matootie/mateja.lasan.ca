@@ -1,5 +1,9 @@
 ### [Resume](https://mateja.lasan.ca/resume)
 
+* [Purpose.](#purpose)
+* [Resources.](#resources)
+* [Problems and lessons.](#problems-and-lessons)
+
 #### Purpose.
 
 The app was intended to be a more involving format for my résumé

@@ -1,5 +1,9 @@
 ### [Guides](https://mateja.lasan.ca/guides)
 
+* [Purpose.](#purpose)
+* [Resources.](#resources)
+* [Problems and lessons.](#problems-and-lessons)
+
 #### Purpose.
 
 I set out to create an app where I could showcase a collection of written guides for issues,
