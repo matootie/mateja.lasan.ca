@@ -20,7 +20,7 @@ under-styled is far better than having a distracting layout.
 #### Problems and lessons.
 
 The guides app featured two main problems, the first being similar to that in the résumé app;
-recursively rendering a family tree for tags and their sub-tags. You can read about the solution to the first issue [here](). The other issue stemmed directly
+recursively rendering a family tree for tags and their sub-tags. You can read about the solution to the first issue [here](https://github.com/matootie/mateja.lasan.ca/tree/master/resume#problems-and-lessons). The other issue stemmed directly
 from the first.
 
 Initially, the URL scheme for the guides app would use follow as such:
