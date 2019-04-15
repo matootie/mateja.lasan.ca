@@ -11,8 +11,8 @@ If you are interested, [here you can find a roadmap of my plans with the website
 
 * [Section 1. Introduction](#section-1-introduction)
 * [Section 2. Sections](#section-2-sections)
-    * [Resume](#resume)
-    * [Guides](#guides)
+    * [Resume](https://github.com/matootie/mateja.lasan.ca/tree/master/resume#resume)
+    * [Guides](https://github.com/matootie/mateja.lasan.ca/tree/master/guides#guides)
 
 ## Section 1: Introduction.
 
@@ -28,5 +28,5 @@ all the sections of my website, with a description of their purpose as
 well as some challenges or lessons I came across along the process of
 development.
 
-* [Resume](https://mateja.lasan.ca/resume)
-* [Guides](https://mateja.lasan.ca/guides)
+* [Resume](https://github.com/matootie/mateja.lasan.ca/tree/master/resume#resume)
+* [Guides](https://github.com/matootie/mateja.lasan.ca/tree/master/guides#guides)
