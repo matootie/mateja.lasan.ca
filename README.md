@@ -1,6 +1,12 @@
 # My personal and professional website.
 
-**[mateja.lasan.ca](https://mateja.lasan.ca/)**
+~~mateja.lasan.ca~~
+
+**[old.lasan.dev](https://old.lasan.dev/)**
+
+**This project has been abandoned in favour of a more modern approach**
+
+I'm now focusing on building my website as a set of microservices distributed across a Kubernetes cluster. Django is amazing for many and most use cases, however as I'm looking to expand my knowledge in the field of web development, it no longer fits my needs.
 
 [![Build Status](https://travis-ci.com/matootie/mateja.lasan.ca.svg?branch=master)](https://travis-ci.com/matootie/mateja.lasan.ca)
 [![Codecov](https://codecov.io/gh/matootie/mateja.lasan.ca/branch/master/graph/badge.svg)](https://codecov.io/gh/matootie/mateja.lasan.ca)
